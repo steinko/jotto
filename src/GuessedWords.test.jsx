@@ -2,7 +2,7 @@ import React from 'react' /* eslint-disable-line no-unused-vars */
 import GuessedWords from './GuessedWords'
 import { render } from '@testing-library/react';
 import { checkProps } from '../test/testutil';
-import { exportAllDeclaration } from '@babel/types';
+
 const defaultProps = {
   guessedWords: [{guessedWord: 'train', letterMatchCount: 3 }],
 }
