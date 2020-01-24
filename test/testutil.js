@@ -1,4 +1,7 @@
 import checkPropTypes from 'check-prop-types';
+import {createStore} from 'redux'
+
+import rootReducer from '../src/reducsers/rootReducer'
 /**
 * Throw error if conformingProps do not pass propTypes validation.
 * @param {React.Component} component - Component to check props against.
@@ -12,3 +15,7 @@ export const checkProps = (component, conformingProps) => {
     component.name);
   expect(propError).toBeUndefined();
 }
+
+export const storeFactory = (initalState) =>  {
+  return createStore(rootReducer,initalState)
+ }
