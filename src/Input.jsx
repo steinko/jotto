@@ -1,9 +1,11 @@
-import React ,{Component} from 'react'
+import React  from 'react'
 
-export default class Input extends Component {
-	render() {
-	   const contents =
-			(
+function Input(props)  {
+	  
+	
+		const contents = props.sucess 
+		? null
+			:(
 			   <form className="form-inline">
 				  <input
 					 data-testid="input-box"
@@ -24,4 +26,5 @@ export default class Input extends Component {
 		     {contents}
 		</div>)
 	 }
-}
+
+export default  Input 

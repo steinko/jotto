@@ -1,16 +1,14 @@
 import React from 'react' /* eslint-disable-line no-unused-vars */
 import GuessedWords from './GuessedWords'
 import { render } from '@testing-library/react';
-import { checkProps } from '../test/testutil';
+
 
 const defaultProps = {
   guessedWords: [{guessedWord: 'train', letterMatchCount: 3 }],
 }
 
 
-it('should not throw any warning', () => {
-  checkProps(GuessedWords, defaultProps)
-})
+
 
 
 describe ('should be no word guessed',()=> {

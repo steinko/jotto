@@ -1,6 +1,6 @@
 import React from 'react' /* eslint-disable-line no-unused-vars */
 import { render } from "@testing-library/react";
-import {checkProps} from '../test/testutil'
+
 
 import Congrats from './Congrats' /* eslint-disable-line no-unused-vars */
 
@@ -24,8 +24,4 @@ it('should deliver congrats message', ()=> {
   expect(getByText('Congrats You guessed the word')).toBeTruthy()
 })
 
-it('should not trrow and error', () => {
-  const expectedProps = {sucess: false}
-  checkProps(Congrats,expectedProps)
-})
 

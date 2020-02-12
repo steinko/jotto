@@ -1,7 +1,8 @@
 import checkPropTypes from 'check-prop-types';
-import {createStore} from 'redux'
+import {createStore, applyMiddelware} from 'redux'
 
 import rootReducer from '../src/reducsers/rootReducer'
+import { middlewares } from '../src/configureStore'
 /**
 * Throw error if conformingProps do not pass propTypes validation.
 * @param {React.Component} component - Component to check props against.
@@ -17,5 +18,6 @@ export const checkProps = (component, conformingProps) => {
 }
 
 export const storeFactory = (initalState) =>  {
-  return createStore(rootReducer,initalState)
+  const createStoreWithMiddleware = applyMiddelware(...middlewares)
+  return createStoreWithMiddleware(rootReducer,initalState)
  }
