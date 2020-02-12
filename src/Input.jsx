@@ -17,7 +17,8 @@ function Input({secretWord})  {
 				<button
 					 data-testid="submit-button"
 					 className= "btn btn-primary mb-2"
-					 type="submit">
+					 type="submit"
+					  onClick =  {()=> setCurrentGuess("") }>
 					 Submit
                 </button>
 			</form>

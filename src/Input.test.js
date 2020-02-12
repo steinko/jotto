@@ -39,11 +39,22 @@ describe('state controlled input field', () => {
 	it('should update value', () => {
 		const mockSetCurrentGuess = jest.fn()
 		React.useState = jest.fn(() => ["",mockSetCurrentGuess])
-		const {queryByTestId} = render(<Input sucess= {false }/>)
+		const {queryByTestId} = render(<Input />)
 		const inputBox = queryByTestId('input-box')
 		fireEvent.change(inputBox, {
             target: {value: 'train'},
 		 })
 		 expect(mockSetCurrentGuess).toHaveBeenCalledWith('train')
+	})
+
+	it('should have a empty value in guessed word ', () => {
+		const mockSetCurrentGuess = jest.fn()
+		React.useState = jest.fn(() => ["",mockSetCurrentGuess])
+		const {queryByTestId} = render(<Input />)
+		const submit = queryByTestId('submit-button')
+		fireEvent.click(submit)
+		expect(queryByTestId('input-box').value).toBe('')
+		expect(mockSetCurrentGuess).toHaveBeenCalledWith('')
+
 	})
 })
